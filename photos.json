@@ -10,7 +10,7 @@
  {
   "project": "binder-jet",
   "file": "binder-jet-02.jpg",
-  "alt": "Print head jetting a XAAR test pattern into the powder bed",
+  "alt": "Print head printing XAAR test lettering into the powder bed",
   "w": 1200,
   "h": 1600,
   "from": "new:binder-02"
@@ -18,7 +18,7 @@
  {
   "project": "binder-jet",
   "file": "binder-jet-03.jpg",
-  "alt": "A comic strip printed into the powder bed as a resolution test",
+  "alt": "A comic strip printed into the powder bed by the binder-jet printer",
   "w": 1600,
   "h": 1067,
   "from": "new:binder-06"
@@ -242,7 +242,7 @@
  {
   "project": "wro",
   "file": "wro-02.jpg",
-  "alt": "Team Bangladesh with the flag on the WRO podium",
+  "alt": "Team Bangladesh with the flag on stage at the World Robot Olympiad",
   "w": 1600,
   "h": 1067,
   "from": "new:wro-09"
