@@ -1,0 +1,618 @@
+[
+ {
+  "project": "binder-jet",
+  "file": "binder-jet-01.jpg",
+  "alt": "Electronics bay of the sand binder-jet printer, built on a Voron 2.4 frame",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:binder-05"
+ },
+ {
+  "project": "binder-jet",
+  "file": "binder-jet-02.jpg",
+  "alt": "Print head jetting a XAAR test pattern into the powder bed",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:binder-02"
+ },
+ {
+  "project": "binder-jet",
+  "file": "binder-jet-03.jpg",
+  "alt": "A comic strip printed into the powder bed as a resolution test",
+  "w": 1600,
+  "h": 1067,
+  "from": "new:binder-06"
+ },
+ {
+  "project": "binder-jet",
+  "file": "binder-jet-04.jpg",
+  "alt": "Print-head carriage with its driver board and wiring",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:binder-03"
+ },
+ {
+  "project": "binder-jet",
+  "file": "binder-jet-05.jpg",
+  "alt": "Power supply and controller boards wired in the printer base",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:binder-01"
+ },
+ {
+  "project": "binder-jet",
+  "file": "binder-jet-06.jpg",
+  "alt": "Workbench during the build, with Voron parts and hardware",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:binder-04"
+ },
+ {
+  "project": "chefee",
+  "file": "chefee-01.jpg",
+  "alt": "The Chefee Robotics team at GITEX Global 2024",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:chefee-04"
+ },
+ {
+  "project": "chefee",
+  "file": "chefee-02.jpg",
+  "alt": "CAD model of an actuated lid mechanism designed for Chefee",
+  "w": 1600,
+  "h": 943,
+  "from": "new:chefee-02"
+ },
+ {
+  "project": "chefee",
+  "file": "chefee-03.jpg",
+  "alt": "Top view of the lid mechanism CAD model",
+  "w": 1600,
+  "h": 1123,
+  "from": "new:chefee-03"
+ },
+ {
+  "project": "firmware",
+  "file": "firmware-01.jpg",
+  "alt": "Printer mainboard and wiring in a 3D-printed electronics case",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:printers-10"
+ },
+ {
+  "project": "firmware",
+  "file": "firmware-02.jpg",
+  "alt": "Single-board computer for Klipper, mounted on a DIN rail",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:voron-04"
+ },
+ {
+  "project": "firmware",
+  "file": "firmware-03.jpg",
+  "alt": "Voron 2.4 electronics bay with the mainboard and power supply",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:voron-14"
+ },
+ {
+  "project": "firmware",
+  "file": "firmware-04.jpg",
+  "alt": "Electronics box mounted on the back of a homemade printer",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:printers-03"
+ },
+ {
+  "project": "abhash",
+  "file": "abhash-01.jpg",
+  "alt": "3D-printed Abhash prototypes with ultrasonic sensors",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:drishti-03"
+ },
+ {
+  "project": "abhash",
+  "file": "abhash-02.jpg",
+  "alt": "Custom Abhash PCB next to a printed sensor housing",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:drishti-06"
+ },
+ {
+  "project": "abhash",
+  "file": "abhash-03.jpg",
+  "alt": "CAD model of the Abhash enclosure",
+  "w": 1138,
+  "h": 1188,
+  "from": "new:drishti-07"
+ },
+ {
+  "project": "abhash",
+  "file": "abhash-04.jpg",
+  "alt": "Render of Abhash clipped onto a white cane",
+  "w": 1200,
+  "h": 675,
+  "from": "new:drishti-05"
+ },
+ {
+  "project": "abhash",
+  "file": "abhash-05.jpg",
+  "alt": "Printed Abhash sensor housing on a workbench",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:drishti-04"
+ },
+ {
+  "project": "abhash",
+  "file": "abhash-06.jpg",
+  "alt": "Drishti Technologies exhibition panel with the team",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:drishti-01"
+ },
+ {
+  "project": "voron-khulna",
+  "file": "voron-khulna-01.jpg",
+  "alt": "Voron 2.4 printing a batch of purple parts",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:voron-19"
+ },
+ {
+  "project": "voron-khulna",
+  "file": "voron-khulna-02.jpg",
+  "alt": "Finished Voron 2.4 on the workbench",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:voron-15"
+ },
+ {
+  "project": "voron-khulna",
+  "file": "voron-khulna-03.jpg",
+  "alt": "Wired electronics bay under the Voron",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:voron-09"
+ },
+ {
+  "project": "voron-khulna",
+  "file": "voron-khulna-04.jpg",
+  "alt": "Electronics bay with the power supply and controller boards",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:voron-08"
+ },
+ {
+  "project": "voron-khulna",
+  "file": "voron-khulna-05.jpg",
+  "alt": "Detailed pagoda model printed on the Voron",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:voron-13"
+ },
+ {
+  "project": "voron-khulna",
+  "file": "voron-khulna-06.jpg",
+  "alt": "A figure printed on the Voron",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:voron-07"
+ },
+ {
+  "project": "voron-khulna",
+  "file": "voron-khulna-07.jpg",
+  "alt": "Wiring the toolhead during assembly",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:voron-06"
+ },
+ {
+  "project": "voron-khulna",
+  "file": "voron-khulna-08.jpg",
+  "alt": "Linear rail on the Voron gantry",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:voron-16"
+ },
+ {
+  "project": "voron-khulna",
+  "file": "voron-khulna-09.jpg",
+  "alt": "Voron 2.4 frame with the bed installed",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:voron-02"
+ },
+ {
+  "project": "voron-khulna",
+  "file": "voron-khulna-10.jpg",
+  "alt": "Siboor Voron 2.4 kit parts laid out before assembly",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:voron-12"
+ },
+ {
+  "project": "wro",
+  "file": "wro-01.jpg",
+  "alt": "Self-driving robot car on the WRO competition table",
+  "w": 1600,
+  "h": 1199,
+  "from": "new:wro-04"
+ },
+ {
+  "project": "wro",
+  "file": "wro-02.jpg",
+  "alt": "Team Bangladesh with the flag on the WRO podium",
+  "w": 1600,
+  "h": 1067,
+  "from": "new:wro-09"
+ },
+ {
+  "project": "wro",
+  "file": "wro-03.jpg",
+  "alt": "Testing the robot at the competition field",
+  "w": 1600,
+  "h": 1067,
+  "from": "new:wro-03"
+ },
+ {
+  "project": "wro",
+  "file": "wro-04.jpg",
+  "alt": "Side view of the robot car with its camera mast",
+  "w": 1311,
+  "h": 983,
+  "from": "new:wro-01"
+ },
+ {
+  "project": "wro",
+  "file": "wro-05.jpg",
+  "alt": "Adjusting the robot's code at the competition",
+  "w": 1600,
+  "h": 900,
+  "from": "new:wro-05"
+ },
+ {
+  "project": "wro",
+  "file": "wro-06.jpg",
+  "alt": "The team at the competition field",
+  "w": 1600,
+  "h": 1067,
+  "from": "new:wro-08"
+ },
+ {
+  "project": "wro",
+  "file": "wro-07.jpg",
+  "alt": "Rear view of the robot car",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:wro-07"
+ },
+ {
+  "project": "wro",
+  "file": "wro-08.jpg",
+  "alt": "Robot car prototype with an onboard display",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:wro-06"
+ },
+ {
+  "project": "rc-glider",
+  "file": "rc-glider-01.jpg",
+  "alt": "Render of the 3D-printed RC glider designed in Fusion 360",
+  "w": 1400,
+  "h": 952,
+  "from": "old:glider-1"
+ },
+ {
+  "project": "rc-glider",
+  "file": "rc-glider-02.jpg",
+  "alt": "The printed glider held up before a flight",
+  "w": 1050,
+  "h": 1400,
+  "from": "old:glider-2"
+ },
+ {
+  "project": "rc-glider",
+  "file": "rc-glider-03.jpg",
+  "alt": "Autodesk Fusion's Instagram post featuring the glider's Grand Prize",
+  "w": 1400,
+  "h": 898,
+  "from": "old:glider-feature"
+ },
+ {
+  "project": "rc-glider",
+  "file": "rc-glider-04.jpg",
+  "alt": "A printed glider prototype in hand",
+  "w": 1400,
+  "h": 1050,
+  "from": "old:glider-3"
+ },
+ {
+  "project": "wattmeter",
+  "file": "wattmeter-01.jpg",
+  "alt": "Render of the wattmeter PCB sliding into its enclosure",
+  "w": 1400,
+  "h": 1050,
+  "from": "old:wattmeter-1"
+ },
+ {
+  "project": "wattmeter",
+  "file": "wattmeter-02.jpg",
+  "alt": "The wattmeter enclosure with its display",
+  "w": 1050,
+  "h": 1400,
+  "from": "old:wattmeter-2"
+ },
+ {
+  "project": "wattmeter",
+  "file": "wattmeter-03.jpg",
+  "alt": "Annotated wattmeter PCB layout",
+  "w": 1400,
+  "h": 1050,
+  "from": "old:wattmeter-3"
+ },
+ {
+  "project": "wattmeter",
+  "file": "wattmeter-04.jpg",
+  "alt": "Exploded render of the wattmeter enclosure",
+  "w": 1400,
+  "h": 1050,
+  "from": "old:wattmeter-4"
+ },
+ {
+  "project": "homemade-printers",
+  "file": "homemade-printers-01.jpg",
+  "alt": "Homemade 3D printer with a purple printed frame",
+  "w": 1202,
+  "h": 1600,
+  "from": "new:printers-06"
+ },
+ {
+  "project": "homemade-printers",
+  "file": "homemade-printers-02.jpg",
+  "alt": "Hotend printing on a homemade printer",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:printers-02"
+ },
+ {
+  "project": "homemade-printers",
+  "file": "homemade-printers-03.jpg",
+  "alt": "Orange test boat printed on a homemade printer",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:printers-11"
+ },
+ {
+  "project": "homemade-printers",
+  "file": "homemade-printers-04.jpg",
+  "alt": "Printed toolhead with a V6 hotend, held in hand",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:printers-12"
+ },
+ {
+  "project": "homemade-printers",
+  "file": "homemade-printers-05.jpg",
+  "alt": "Printer frame and gantry during assembly",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:printers-05"
+ },
+ {
+  "project": "homemade-printers",
+  "file": "homemade-printers-06.jpg",
+  "alt": "Linear rails and printed brackets of a homemade printer",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:printers-15"
+ },
+ {
+  "project": "homemade-printers",
+  "file": "homemade-printers-07.jpg",
+  "alt": "Homemade printer frame with the heated bed fitted",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:printers-13"
+ },
+ {
+  "project": "homemade-printers",
+  "file": "homemade-printers-08.jpg",
+  "alt": "Large purple part printed on a homemade printer",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:printers-14"
+ },
+ {
+  "project": "homemade-printers",
+  "file": "homemade-printers-09.jpg",
+  "alt": "Homemade printer on a busy workbench",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:printers-16"
+ },
+ {
+  "project": "homemade-printers",
+  "file": "homemade-printers-10.jpg",
+  "alt": "Bare frame of a homemade printer",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:printers-17"
+ },
+ {
+  "project": "power-bench",
+  "file": "power-bench-01.jpg",
+  "alt": "Programmable DC load with its large heatsink",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:dcload-06"
+ },
+ {
+  "project": "power-bench",
+  "file": "power-bench-02.jpg",
+  "alt": "ESP32 buck-boost converter board on the bench",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:dcdc-04"
+ },
+ {
+  "project": "power-bench",
+  "file": "power-bench-03.jpg",
+  "alt": "DC load web interface showing live voltage, current and power",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:dcload-09"
+ },
+ {
+  "project": "power-bench",
+  "file": "power-bench-04.jpg",
+  "alt": "Oscilloscope showing the converter's switching waveforms",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:dcdc-03"
+ },
+ {
+  "project": "power-bench",
+  "file": "power-bench-05.jpg",
+  "alt": "DC load electronics mounted on the heatsink",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:dcload-13"
+ },
+ {
+  "project": "power-bench",
+  "file": "power-bench-06.jpg",
+  "alt": "PCB render of the buck-boost converter",
+  "w": 1202,
+  "h": 779,
+  "from": "new:dcdc-08"
+ },
+ {
+  "project": "power-bench",
+  "file": "power-bench-07.jpg",
+  "alt": "DC load control board on a soldering mat",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:dcload-05"
+ },
+ {
+  "project": "power-bench",
+  "file": "power-bench-08.jpg",
+  "alt": "Measuring the converter's efficiency with two multimeters",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:dcdc-15"
+ },
+ {
+  "project": "power-bench",
+  "file": "power-bench-09.jpg",
+  "alt": "Assembled DC load control board in hand",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:dcload-02"
+ },
+ {
+  "project": "power-bench",
+  "file": "power-bench-10.jpg",
+  "alt": "Bench setup with the oscilloscope and power supply",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:dcdc-02"
+ },
+ {
+  "project": "self-balancing",
+  "file": "self-balancing-01.jpg",
+  "alt": "Render of the self-balancing robot",
+  "w": 1400,
+  "h": 1050,
+  "from": "old:balance-1"
+ },
+ {
+  "project": "self-balancing",
+  "file": "self-balancing-02.jpg",
+  "alt": "Self-balancing robot held in hand with its lights on",
+  "w": 1200,
+  "h": 1600,
+  "from": "new:balance-01"
+ },
+ {
+  "project": "self-balancing",
+  "file": "self-balancing-03.jpg",
+  "alt": "Self-balancing robot standing on its wheels",
+  "w": 1119,
+  "h": 1400,
+  "from": "old:balance-2"
+ },
+ {
+  "project": "self-balancing",
+  "file": "self-balancing-04.jpg",
+  "alt": "Front render of the self-balancing robot",
+  "w": 840,
+  "h": 1050,
+  "from": "old:balance-3"
+ },
+ {
+  "project": "foam-cutter",
+  "file": "foam-cutter-01.jpg",
+  "alt": "CNC hot-wire foam cutter with a foam block",
+  "w": 1400,
+  "h": 787,
+  "from": "old:foam-1"
+ },
+ {
+  "project": "foam-cutter",
+  "file": "foam-cutter-02.jpg",
+  "alt": "Foam wings cut on the hot-wire cutter, fitted to an RC plane",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:hotwire-01"
+ },
+ {
+  "project": "foam-cutter",
+  "file": "foam-cutter-03.jpg",
+  "alt": "Foam scale RC plane built with hot-wire-cut wings",
+  "w": 1400,
+  "h": 1050,
+  "from": "old:foam-2"
+ },
+ {
+  "project": "racing-drone",
+  "file": "racing-drone-01.jpg",
+  "alt": "5-inch FPV racing drone with red propellers",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:drone-01"
+ },
+ {
+  "project": "racing-drone",
+  "file": "racing-drone-02.jpg",
+  "alt": "Render of the racing drone",
+  "w": 1175,
+  "h": 985,
+  "from": "old:drone-1"
+ },
+ {
+  "project": "racing-drone",
+  "file": "racing-drone-03.jpg",
+  "alt": "The drone during the build, on the workbench",
+  "w": 772,
+  "h": 1400,
+  "from": "old:drone-2"
+ },
+ {
+  "project": "racing-drone",
+  "file": "racing-drone-04.jpg",
+  "alt": "Frame, flight controller and parts before the build",
+  "w": 1600,
+  "h": 1200,
+  "from": "new:drone-02"
+ },
+ {
+  "project": "about",
+  "file": "portrait.jpg",
+  "alt": "Portrait of Iqbal Samin Prithul",
+  "w": 640,
+  "h": 640,
+  "from": "old:portrait"
+ }
+]
