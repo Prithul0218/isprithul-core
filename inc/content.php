@@ -324,7 +324,7 @@ function isp_sanitize_content( $input ): array {
 			case 'textarea':
 			case 'lines':
 			case 'paragraphs':
-				$out[ $key ] = sanitize_textarea_field( $value );
+				$out[ $key ] = isp_clean_multiline( $value );
 				break;
 			case 'email':
 				$out[ $key ] = sanitize_email( $value );
@@ -337,10 +337,26 @@ function isp_sanitize_content( $input ): array {
 				$out[ $key ] = (string) absint( $value );
 				break;
 			default:
-				$out[ $key ] = sanitize_text_field( $value );
+				$out[ $key ] = isp_clean_line( $value );
 		}
 	}
 	return $out;
+}
+
+/*
+ * Plain-text cleaning that keeps what WordPress's sanitize_text_field() would eat:
+ * percent-encoded links (linkedin.com/in/j%C3%B6rg) and backslashes. Tags go;
+ * everything is escaped again when it is shown.
+ */
+function isp_clean_line( $value ): string {
+	$value = wp_check_invalid_utf8( (string) $value, true );
+	$value = wp_strip_all_tags( $value, true );
+	return trim( (string) preg_replace( '/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u', '', $value ) );
+}
+function isp_clean_multiline( $value ): string {
+	$value = wp_check_invalid_utf8( str_replace( array( "\r\n", "\r" ), "\n", (string) $value ), true );
+	$value = wp_strip_all_tags( $value );
+	return trim( (string) preg_replace( '/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u', '', $value ) );
 }
 
 /** Save some fields, keeping the rest. */

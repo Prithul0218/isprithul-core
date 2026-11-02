@@ -15,16 +15,16 @@ const ISP_PROJECT = 'isp_project';
 /** Meta fields, all plain strings so they are easy to edit through the REST API too. */
 function isp_project_meta(): array {
 	return array(
-		'isp_tagline'    => 'sanitize_text_field',
-		'isp_type'       => 'sanitize_text_field',
-		'isp_year'       => 'sanitize_text_field',
-		'isp_badge'      => 'sanitize_text_field',
+		'isp_tagline'    => 'isp_clean_line',
+		'isp_type'       => 'isp_clean_line',
+		'isp_year'       => 'isp_clean_line',
+		'isp_badge'      => 'isp_clean_line',
 		'isp_group'      => 'isp_sanitize_group',
 		'isp_services'   => 'isp_sanitize_services',
-		'isp_summary'    => 'sanitize_textarea_field',
-		'isp_facts'      => 'sanitize_textarea_field',
-		'isp_quote_text' => 'sanitize_textarea_field',
-		'isp_quote_who'  => 'sanitize_text_field',
+		'isp_summary'    => 'isp_clean_multiline',
+		'isp_facts'      => 'isp_clean_multiline',
+		'isp_quote_text' => 'isp_clean_multiline',
+		'isp_quote_who'  => 'isp_clean_line',
 		'isp_gallery'    => 'isp_sanitize_gallery',
 	);
 }
@@ -317,7 +317,8 @@ add_action(
 				continue;
 			}
 			if ( isset( $_POST[ $key ] ) ) {
-				update_post_meta( $post_id, $key, call_user_func( $sanitize, wp_unslash( $_POST[ $key ] ) ) );
+				// update_post_meta() strips one level of slashes, so hand it a slashed value.
+				update_post_meta( $post_id, $key, wp_slash( call_user_func( $sanitize, wp_unslash( $_POST[ $key ] ) ) ) );
 			}
 		}
 		// phpcs:enable
@@ -486,14 +487,18 @@ add_action(
 	10,
 	3
 );
-/* A changed alt text or a deleted photo changes the homepage too. */
-add_action(
-	'updated_post_meta',
-	function ( $meta_id, $object_id, $key ) {
-		if ( '_wp_attachment_image_alt' === $key ) {
-			isp_purge_cache();
-		}
-	},
-	10,
-	3
-);
+/* A deleted photo or a new, changed or removed alt text changes the homepage too. */
+add_action( 'delete_attachment', 'isp_purge_cache' );
+foreach ( array( 'added_post_meta', 'updated_post_meta', 'deleted_post_meta' ) as $isp_meta_hook ) {
+	add_action(
+		$isp_meta_hook,
+		function ( $meta_id, $object_id, $key ) {
+			if ( '_wp_attachment_image_alt' === $key ) {
+				isp_purge_cache();
+			}
+		},
+		10,
+		3
+	);
+}
+unset( $isp_meta_hook );

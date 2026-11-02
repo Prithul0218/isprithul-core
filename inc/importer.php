@@ -105,10 +105,12 @@ function isp_sideload_photo( string $url, string $file, string $alt, int $parent
 	require_once ABSPATH . 'wp-admin/includes/file.php';
 	require_once ABSPATH . 'wp-admin/includes/media.php';
 	require_once ABSPATH . 'wp-admin/includes/image.php';
-	$tmp = download_url( $url, 60 );
+	$tmp = download_url( $url, 15 );
 	if ( is_wp_error( $tmp ) ) {
 		return $tmp;
 	}
+	// The import marker is saved together with the attachment, so a step that is cut
+	// off halfway never leaves a photo that the next step would download again.
 	$id = media_handle_sideload(
 		array(
 			'name'     => $file,
@@ -116,26 +118,34 @@ function isp_sideload_photo( string $url, string $file, string $alt, int $parent
 		),
 		$parent,
 		null,
-		array(
-			'post_title'   => $alt,
-			'post_excerpt' => '',
+		wp_slash(
+			array(
+				'post_title'   => $alt,
+				'post_excerpt' => '',
+				'meta_input'   => array(
+					'_isp_import_file'         => $file,
+					'_wp_attachment_image_alt' => $alt,
+				),
+			)
 		)
 	);
 	if ( is_wp_error( $id ) ) {
 		wp_delete_file( $tmp );
 		return $id;
 	}
-	update_post_meta( $id, '_wp_attachment_image_alt', $alt );
-	update_post_meta( $id, '_isp_import_file', $file );
 	return $id;
 }
 
 /**
- * One step of the import: create missing projects, then download photos
- * until about 15 seconds have passed. Call again until "done" is true.
+ * One step of the import: create missing projects, then download photos for about
+ * 8 seconds (each download may take up to 15 more), so a step stays well inside a
+ * 30-second PHP time limit. Call again until "done" is true.
  */
 function isp_import_step(): array {
 	$start = microtime( true );
+	if ( function_exists( 'set_time_limit' ) ) {
+		@set_time_limit( 120 ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged -- some hosts forbid it; the step is short either way.
+	}
 	$data  = isp_starter_data();
 	$log   = array();
 
@@ -145,7 +155,7 @@ function isp_import_step(): array {
 			continue;
 		}
 		$id = wp_insert_post(
-			array(
+			wp_slash( array(
 				'post_type'   => ISP_PROJECT,
 				'post_status' => 'publish',
 				'post_title'  => $p['title'],
@@ -165,7 +175,7 @@ function isp_import_step(): array {
 					'_isp_import_id'     => $p['id'],
 					'_isp_import_gallery' => '1',
 				),
-			),
+			) ),
 			true
 		);
 		$log[] = is_wp_error( $id ) ? 'Could not create ' . $p['title'] . ': ' . $id->get_error_message() : 'Created project: ' . $p['title'];
@@ -187,7 +197,7 @@ function isp_import_step(): array {
 		if ( isset( $have[ $photo['file'] ] ) ) {
 			continue;
 		}
-		if ( microtime( true ) - $start > 15 ) {
+		if ( microtime( true ) - $start > 8 ) {
 			break;
 		}
 		$parent = $photo['project'] ? isp_find_project( $photo['project'] ) : 0;
@@ -199,6 +209,21 @@ function isp_import_step(): array {
 		}
 		$have[ $photo['file'] ] = $id;
 		$log[]                  = 'Added photo ' . $photo['file'];
+	}
+
+	// 2b. Once every photo is in: finish any whose smaller sizes were cut off by a time limit.
+	if ( count( $have ) >= count( $queue ) ) {
+		require_once ABSPATH . 'wp-admin/includes/image.php';
+		update_meta_cache( 'post', array_values( $have ) );
+		foreach ( $have as $file => $id ) {
+			if ( microtime( true ) - $start > 8 ) {
+				break;
+			}
+			if ( wp_get_missing_image_subsizes( $id ) ) {
+				wp_update_image_subsizes( $id );
+				$log[] = 'Finished the smaller sizes of ' . $file;
+			}
+		}
 	}
 
 	// 3. Galleries, once all of a project's photos are in.

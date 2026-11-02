@@ -4,8 +4,9 @@
  *
  * POST /wp-json/isprithul/v1/brief  { name, email, what, type, when, budget, website, elapsed }
  * No nonce on purpose: the homepage is served from the page cache, where a nonce
- * would go stale. Spam is held off by a hidden field, a minimum fill-in time and
- * a per-address limit instead.
+ * would go stale. Spam is held off instead by a hidden field, a minimum fill-in
+ * time the theme's script always reports, 5 briefs an hour per connection (per /64
+ * for IPv6) and 30 an hour for the whole site.
  *
  * @package isprithul-core
  */
@@ -66,48 +67,65 @@ add_action(
 	}
 );
 
+/** Who is sending: the IP address, or its /64 network for IPv6 (one connection gets a whole /64). */
+function isp_brief_client_key(): string {
+	$ip = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
+	if ( filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6 ) ) {
+		$packed = inet_pton( $ip );
+		if ( false !== $packed ) {
+			return 'v6:' . bin2hex( substr( $packed, 0, 8 ) );
+		}
+	}
+	return $ip;
+}
+
 function isp_receive_brief( WP_REST_Request $request ) {
 	$p   = $request->get_json_params();
 	$p   = is_array( $p ) ? $p : $request->get_body_params();
 	$get = fn( $key, $max ) => mb_substr( trim( is_scalar( $p[ $key ] ?? '' ) ? (string) ( $p[ $key ] ?? '' ) : '' ), 0, $max );
 
-	// Bots: the hidden "website" field is filled in, or the form was sent within seconds of opening.
+	// Bots: the hidden "website" field is filled in, or the form wasn't open for a few
+	// seconds (the theme's script always sends how long it was open). They get a calm "ok".
 	$elapsed = (int) ( $p['elapsed'] ?? 0 );
-	if ( '' !== $get( 'website', 200 ) || ( $elapsed > 0 && $elapsed < 2500 ) ) {
+	if ( '' !== $get( 'website', 200 ) || $elapsed < 2500 ) {
 		return rest_ensure_response( array( 'ok' => true ) );
 	}
 
-	$ip    = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
-	$limit = 'isp_brief_' . md5( $ip . wp_salt( 'nonce' ) );
+	$limit = 'isp_brief_' . md5( isp_brief_client_key() . wp_salt( 'nonce' ) );
 	$count = (int) get_transient( $limit );
-	if ( $count >= 5 ) {
-		return new WP_Error( 'isp_too_many', 'Too many briefs from this connection. Please email me instead.', array( 'status' => 429 ) );
+	$total = (int) get_transient( 'isp_brief_all' );
+	if ( $count >= 5 || $total >= 30 ) {
+		return new WP_Error( 'isp_too_many', 'Too many briefs right now. Please email me instead.', array( 'status' => 429 ) );
 	}
 
-	$name   = sanitize_text_field( $get( 'name', 120 ) );
+	$name   = isp_clean_line( $get( 'name', 120 ) );
 	$email  = sanitize_email( $get( 'email', 200 ) );
-	$what   = sanitize_textarea_field( $get( 'what', 6000 ) );
-	$type   = sanitize_text_field( $get( 'type', 120 ) );
-	$when   = sanitize_text_field( $get( 'when', 120 ) );
-	$budget = sanitize_text_field( $get( 'budget', 200 ) );
+	$what   = isp_clean_multiline( $get( 'what', 6000 ) );
+	$type   = isp_clean_line( $get( 'type', 120 ) );
+	$when   = isp_clean_line( $get( 'when', 120 ) );
+	$budget = isp_clean_line( $get( 'budget', 200 ) );
 	if ( '' === $name || ! is_email( $email ) || '' === $what ) {
 		return new WP_Error( 'isp_incomplete', 'Please add your name, a valid email and a few words about the project.', array( 'status' => 400 ) );
 	}
 	set_transient( $limit, $count + 1, HOUR_IN_SECONDS );
+	set_transient( 'isp_brief_all', $total + 1, HOUR_IN_SECONDS );
 
+	// wp_insert_post() expects slashed data (it strips one level), so backslashes survive.
 	$post_id = wp_insert_post(
-		array(
-			'post_type'   => ISP_BRIEF,
-			'post_status' => 'private',
-			'post_title'  => $name . ' · ' . wp_trim_words( $what, 8, '…' ),
-			'meta_input'  => array(
-				'isp_name'   => $name,
-				'isp_email'  => $email,
-				'isp_what'   => $what,
-				'isp_type'   => $type,
-				'isp_when'   => $when,
-				'isp_budget' => $budget,
-			),
+		wp_slash(
+			array(
+				'post_type'   => ISP_BRIEF,
+				'post_status' => 'private',
+				'post_title'  => $name . ' · ' . wp_trim_words( $what, 8, '…' ),
+				'meta_input'  => array(
+					'isp_name'   => $name,
+					'isp_email'  => $email,
+					'isp_what'   => $what,
+					'isp_type'   => $type,
+					'isp_when'   => $when,
+					'isp_budget' => $budget,
+				),
+			)
 		),
 		true
 	);

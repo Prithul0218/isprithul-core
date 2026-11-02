@@ -29,11 +29,12 @@ require ISP_CORE_DIR . 'inc/brief.php';
 require ISP_CORE_DIR . 'inc/importer.php';
 
 /**
- * Empty the page cache (LiteSpeed) so visitors see a change right away.
- * The homepage carries every text and the project list, so any edit affects it.
+ * Empty the LiteSpeed page cache so visitors see a change right away. Every page
+ * carries the header, footer and form texts, and the homepage the projects.
+ * ('*' empties the page cache only: no object cache, OPcache or admin notice.)
  */
 function isp_purge_cache() {
-	do_action( 'litespeed_purge_all' );
+	do_action( 'litespeed_purge', '*' );
 }
 
 register_activation_hook(
