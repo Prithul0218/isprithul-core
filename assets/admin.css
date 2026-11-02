@@ -1,0 +1,38 @@
+/* isprithul core · admin */
+.isp-admin .isp-lead{font-size:14px;max-width:60em}
+.isp-jump{display:flex;flex-wrap:wrap;gap:6px 14px;margin:12px 0 4px;padding:10px 12px;background:#fff;border:1px solid #dcdcde}
+.isp-jump a{text-decoration:none}
+.isp-section{background:#fff;border:1px solid #dcdcde;padding:4px 20px 8px;margin:16px 0;scroll-margin-top:48px}
+.isp-section h2{margin:16px 0 4px}
+.isp-section__intro{color:#50575e;margin:0 0 4px}
+.isp-section .form-table th{width:220px}
+.isp-savebar{position:sticky;bottom:0;z-index:5;background:#f0f0f1;border-top:1px solid #dcdcde;padding:12px 0;display:flex;align-items:center;gap:12px}
+.isp-image{display:flex;align-items:center;gap:10px}
+.isp-image__preview img{width:72px;height:72px;object-fit:cover;border:1px solid #dcdcde;display:block}
+/* project edit screen */
+.isp-project-fields .isp-field{margin:0 0 14px}
+.isp-project-fields label,.isp-project-fields legend{display:block;font-weight:600;margin-bottom:4px}
+.isp-project-fields .description{display:block;margin-top:4px}
+.isp-project-fields .isp-inline{display:inline-flex;align-items:center;gap:4px;font-weight:400;margin-right:14px}
+.isp-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 16px}
+@media (max-width:900px){.isp-cols{grid-template-columns:minmax(0,1fr)}}
+/* inline-block (not flex): jQuery UI sortable then treats the photos as a row and reorders them sideways */
+.isp-gallery__list{margin:4px 0 2px;font-size:0}
+.isp-gallery__list li{position:relative;display:inline-block;vertical-align:top;width:120px;margin:0 10px 10px 0;cursor:move;background:#f6f7f7;border:1px solid #dcdcde;font-size:13px}
+.isp-gallery__list li:first-child{outline:3px solid #2271b1;outline-offset:1px}
+.isp-gallery__list li:first-child::before{content:"Cover";position:absolute;left:4px;top:4px;background:#2271b1;color:#fff;font-size:11px;padding:1px 6px;border-radius:2px}
+.isp-gallery__list img{display:block;width:120px;height:90px;object-fit:cover}
+.isp-gallery__remove{position:absolute;right:3px;top:3px;width:24px;height:24px;border:0;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;font-size:16px;line-height:24px;cursor:pointer;padding:0}
+.isp-gallery__edit{display:block;font-size:11px;text-align:center;padding:3px 0}
+.isp-gallery__list .ui-sortable-placeholder{visibility:visible !important;border:1px dashed #2271b1;background:#f0f6fc;width:120px;height:110px}
+/* projects list */
+.post-type-isp_project .column-isp_drag{width:28px}
+.post-type-isp_project .column-isp_cover{width:68px}
+.post-type-isp_project .column-isp_photos{width:70px}
+.isp-drag{cursor:grab;color:#787c82}
+.isp-cover{display:block;width:60px;height:45px;object-fit:cover}
+#the-list.isp-saving{opacity:.6}
+#the-list tr.ui-sortable-helper{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+/* starter content */
+.isp-import-progress{width:100%;max-width:520px;height:16px}
+.isp-import-log{max-width:820px;max-height:320px;overflow:auto;background:#fff;border:1px solid #dcdcde;padding:10px;white-space:pre-wrap}

@@ -1,0 +1,521 @@
+{
+ "media_base": "https://raw.githubusercontent.com/Prithul0218/isprithul-core/media/photos/",
+ "projects": [
+  {
+   "id": "binder-jet",
+   "group": "client",
+   "title": "Sand binder-jet 3D printer",
+   "tagline": "A Voron that learned to print sand.",
+   "type": "Client project",
+   "year": "2026",
+   "badge": "Printing sand",
+   "services": "u3,u1",
+   "summary": "A powder-bed 3D printer that jets binder into sand, built on a Voron 2.4 motion system for a private client in the UAE. I handle the electronics, firmware, host software and bring-up.",
+   "facts": "Client | Private, UAE\nProcess | Binder jetting into sand\nBase | Voron 2.4 CoreXY\nControl | Klipper + my own host software",
+   "quote_text": "",
+   "quote_who": "",
+   "photos": [
+    {
+     "file": "binder-jet-01.jpg",
+     "alt": "Electronics bay of the sand binder-jet printer, built on a Voron 2.4 frame"
+    },
+    {
+     "file": "binder-jet-02.jpg",
+     "alt": "Print head jetting a XAAR test pattern into the powder bed"
+    },
+    {
+     "file": "binder-jet-03.jpg",
+     "alt": "A comic strip printed into the powder bed as a resolution test"
+    },
+    {
+     "file": "binder-jet-04.jpg",
+     "alt": "Print-head carriage with its driver board and wiring"
+    },
+    {
+     "file": "binder-jet-05.jpg",
+     "alt": "Power supply and controller boards wired in the printer base"
+    },
+    {
+     "file": "binder-jet-06.jpg",
+     "alt": "Workbench during the build, with Voron parts and hardware"
+    }
+   ]
+  },
+  {
+   "id": "chefee",
+   "group": "client",
+   "title": "Kitchen-robot electronics",
+   "tagline": "Three years of remote R&D for a robot that cooks.",
+   "type": "Contract R&D",
+   "year": "2022–25",
+   "badge": "Shown at GITEX",
+   "services": "u2,u1",
+   "summary": "Remote R&D for Chefee Robotics, a US startup building a home-cooking robot: custom PCBs, firmware for the mainboard and actuators, and 20+ 3D-printed parts. At GITEX Global 2024 I represented the engineering side.",
+   "facts": "Client | Chefee Robotics, US\nPCBs | 3+ custom boards\nFirmware | Mainboard and actuators\nPrinted parts | 20+\nShown at | GITEX Global 2024",
+   "quote_text": "Prithul spent countless hours solving puzzle after puzzle, problem after problem, designing out-of-the-box 3D models … and all while communicating progress at a very high level.",
+   "quote_who": "Assaf Pashut, Founder, Chefee Robotics",
+   "photos": [
+    {
+     "file": "chefee-01.jpg",
+     "alt": "The Chefee Robotics team at GITEX Global 2024"
+    },
+    {
+     "file": "chefee-02.jpg",
+     "alt": "CAD model of an actuated lid mechanism designed for Chefee"
+    },
+    {
+     "file": "chefee-03.jpg",
+     "alt": "Top view of the lid mechanism CAD model"
+    }
+   ]
+  },
+  {
+   "id": "firmware",
+   "group": "client",
+   "title": "3D printer firmware",
+   "tagline": "Marlin and Klipper for 80+ printer models.",
+   "type": "Fiverr",
+   "year": "2022–now",
+   "badge": "247 orders",
+   "services": "u1",
+   "summary": "Custom Marlin and Klipper firmware for 3D printers: board swaps, Klipper conversions, input shaping and macros.",
+   "facts": "Orders | 247\nRating | 5.0★ from 142 reviews\nPrinters | 80+ models\nClients | US, UK, Europe and more",
+   "quote_text": "",
+   "quote_who": "",
+   "photos": [
+    {
+     "file": "firmware-01.jpg",
+     "alt": "Printer mainboard and wiring in a 3D-printed electronics case"
+    },
+    {
+     "file": "firmware-02.jpg",
+     "alt": "Single-board computer for Klipper, mounted on a DIN rail"
+    },
+    {
+     "file": "firmware-03.jpg",
+     "alt": "Voron 2.4 electronics bay with the mainboard and power supply"
+    },
+    {
+     "file": "firmware-04.jpg",
+     "alt": "Electronics box mounted on the back of a homemade printer"
+    }
+   ]
+  },
+  {
+   "id": "abhash",
+   "group": "venture",
+   "title": "Abhash smart-cane device",
+   "tagline": "Obstacle alerts for white-cane users, designed from scratch.",
+   "type": "Startup",
+   "year": "2023–25",
+   "badge": "700+ users",
+   "services": "u2",
+   "summary": "I designed Abhash from scratch: the electronics, a custom PCB and a 3D-printed enclosure, tested with real users. The team later optimized it for production, and it now has 700+ users across Bangladesh.",
+   "facts": "Role | Co-founder, R&D lead\nCompany | Drishti Technologies, Dhaka\nPCB | Custom, designed in Eagle\nEnclosure | Fusion 360, 3D printed\nPatent | Applied for\nUsers today | 700+ (production version)",
+   "quote_text": "",
+   "quote_who": "",
+   "photos": [
+    {
+     "file": "abhash-01.jpg",
+     "alt": "3D-printed Abhash prototypes with ultrasonic sensors"
+    },
+    {
+     "file": "abhash-02.jpg",
+     "alt": "Custom Abhash PCB next to a printed sensor housing"
+    },
+    {
+     "file": "abhash-03.jpg",
+     "alt": "CAD model of the Abhash enclosure"
+    },
+    {
+     "file": "abhash-04.jpg",
+     "alt": "Render of Abhash clipped onto a white cane"
+    },
+    {
+     "file": "abhash-05.jpg",
+     "alt": "Printed Abhash sensor housing on a workbench"
+    },
+    {
+     "file": "abhash-06.jpg",
+     "alt": "Drishti Technologies exhibition panel with the team"
+    }
+   ]
+  },
+  {
+   "id": "voron-khulna",
+   "group": "client",
+   "title": "Voron 2.4 for Khulna University",
+   "tagline": "A fast CoreXY printer, built and tuned for university research.",
+   "type": "Research build",
+   "year": "2025",
+   "badge": "Delivered",
+   "services": "u3,u1",
+   "summary": "I assembled it from a kit, then tuned Klipper so the lab gets clean prints at high speed.",
+   "facts": "Client | Khulna University\nKit | Siboor Voron 2.4 R2\nFirmware | Klipper, tuned for speed",
+   "quote_text": "",
+   "quote_who": "",
+   "photos": [
+    {
+     "file": "voron-khulna-01.jpg",
+     "alt": "Voron 2.4 printing a batch of purple parts"
+    },
+    {
+     "file": "voron-khulna-02.jpg",
+     "alt": "Finished Voron 2.4 on the workbench"
+    },
+    {
+     "file": "voron-khulna-03.jpg",
+     "alt": "Wired electronics bay under the Voron"
+    },
+    {
+     "file": "voron-khulna-04.jpg",
+     "alt": "Electronics bay with the power supply and controller boards"
+    },
+    {
+     "file": "voron-khulna-05.jpg",
+     "alt": "Detailed pagoda model printed on the Voron"
+    },
+    {
+     "file": "voron-khulna-06.jpg",
+     "alt": "A figure printed on the Voron"
+    },
+    {
+     "file": "voron-khulna-07.jpg",
+     "alt": "Wiring the toolhead during assembly"
+    },
+    {
+     "file": "voron-khulna-08.jpg",
+     "alt": "Linear rail on the Voron gantry"
+    },
+    {
+     "file": "voron-khulna-09.jpg",
+     "alt": "Voron 2.4 frame with the bed installed"
+    },
+    {
+     "file": "voron-khulna-10.jpg",
+     "alt": "Siboor Voron 2.4 kit parts laid out before assembly"
+    }
+   ]
+  },
+  {
+   "id": "wro",
+   "group": "venture",
+   "title": "Self-driving robot car",
+   "tagline": "Bangladesh's first bronze at the World Robot Olympiad.",
+   "type": "Competition",
+   "year": "2022, 2025",
+   "badge": "WRO bronze",
+   "services": "u2,u3",
+   "summary": "An autonomous robot car with computer vision and obstacle avoidance. 3rd place at the 2022 international final in Dortmund (73 countries), and 6th of 65 teams in Singapore in 2025 with a full score on the robot runs.",
+   "facts": "WRO 2022 | 3rd, international final\nWRO 2025 | 6th of 65 teams\nStack | ESP32, computer vision",
+   "quote_text": "",
+   "quote_who": "",
+   "photos": [
+    {
+     "file": "wro-01.jpg",
+     "alt": "Self-driving robot car on the WRO competition table"
+    },
+    {
+     "file": "wro-02.jpg",
+     "alt": "Team Bangladesh with the flag on the WRO podium"
+    },
+    {
+     "file": "wro-03.jpg",
+     "alt": "Testing the robot at the competition field"
+    },
+    {
+     "file": "wro-04.jpg",
+     "alt": "Side view of the robot car with its camera mast"
+    },
+    {
+     "file": "wro-05.jpg",
+     "alt": "Adjusting the robot's code at the competition"
+    },
+    {
+     "file": "wro-06.jpg",
+     "alt": "The team at the competition field"
+    },
+    {
+     "file": "wro-07.jpg",
+     "alt": "Rear view of the robot car"
+    },
+    {
+     "file": "wro-08.jpg",
+     "alt": "Robot car prototype with an onboard display"
+    }
+   ]
+  },
+  {
+   "id": "rc-glider",
+   "group": "personal",
+   "title": "3D-printed RC glider",
+   "tagline": "Designed in Fusion 360, printed on my own printer, and it flies.",
+   "type": "Personal",
+   "year": "2023",
+   "badge": "Grand Prize",
+   "services": "u3",
+   "summary": "I designed it in Fusion 360 and printed the whole airframe in parts on a 3D printer I built myself. It won the Grand Prize in the Instructables Make it Fly student design challenge.",
+   "facts": "CAD | Fusion 360\nAirframe | 3D printed in parts\nAward | Grand Prize, Make it Fly (Instructables)\nFeatured by | Autodesk Fusion, Feb 2024",
+   "quote_text": "",
+   "quote_who": "",
+   "photos": [
+    {
+     "file": "rc-glider-01.jpg",
+     "alt": "Render of the 3D-printed RC glider designed in Fusion 360"
+    },
+    {
+     "file": "rc-glider-02.jpg",
+     "alt": "The printed glider held up before a flight"
+    },
+    {
+     "file": "rc-glider-03.jpg",
+     "alt": "Autodesk Fusion's Instagram post featuring the glider's Grand Prize"
+    },
+    {
+     "file": "rc-glider-04.jpg",
+     "alt": "A printed glider prototype in hand"
+    }
+   ]
+  },
+  {
+   "id": "wattmeter",
+   "group": "personal",
+   "title": "ESP32 precision wattmeter",
+   "tagline": "Two units graph a power supply's efficiency live.",
+   "type": "Personal",
+   "year": "2024",
+   "badge": "Open source",
+   "services": "u2",
+   "summary": "A precision DC wattmeter with a 24-bit ADC, dual shunts and an ESP32-S3. Two units link over Wi-Fi to graph a power supply's efficiency in real time. The design is published on GitHub and Instructables.",
+   "facts": "ADC | 24-bit ADS1256\nMCU | ESP32-S3\nShunts | 5 mΩ + 100 mΩ\nDocs | GitHub, Instructables",
+   "quote_text": "",
+   "quote_who": "",
+   "photos": [
+    {
+     "file": "wattmeter-01.jpg",
+     "alt": "Render of the wattmeter PCB sliding into its enclosure"
+    },
+    {
+     "file": "wattmeter-02.jpg",
+     "alt": "The wattmeter enclosure with its display"
+    },
+    {
+     "file": "wattmeter-03.jpg",
+     "alt": "Annotated wattmeter PCB layout"
+    },
+    {
+     "file": "wattmeter-04.jpg",
+     "alt": "Exploded render of the wattmeter enclosure"
+    }
+   ]
+  },
+  {
+   "id": "homemade-printers",
+   "group": "personal",
+   "title": "My homemade 3D printers",
+   "tagline": "I built my first in 2020, before I'd seen one in real life.",
+   "type": "Personal",
+   "year": "2020–22",
+   "badge": "",
+   "services": "u3,u1",
+   "summary": "I had never seen a 3D printer in real life when I built my first one in 2020. More followed, and one of them printed my prize-winning RC glider.",
+   "facts": "First build | 2020\nBuilt | From scratch",
+   "quote_text": "",
+   "quote_who": "",
+   "photos": [
+    {
+     "file": "homemade-printers-01.jpg",
+     "alt": "Homemade 3D printer with a purple printed frame"
+    },
+    {
+     "file": "homemade-printers-02.jpg",
+     "alt": "Hotend printing on a homemade printer"
+    },
+    {
+     "file": "homemade-printers-03.jpg",
+     "alt": "Orange test boat printed on a homemade printer"
+    },
+    {
+     "file": "homemade-printers-04.jpg",
+     "alt": "Printed toolhead with a V6 hotend, held in hand"
+    },
+    {
+     "file": "homemade-printers-05.jpg",
+     "alt": "Printer frame and gantry during assembly"
+    },
+    {
+     "file": "homemade-printers-06.jpg",
+     "alt": "Linear rails and printed brackets of a homemade printer"
+    },
+    {
+     "file": "homemade-printers-07.jpg",
+     "alt": "Homemade printer frame with the heated bed fitted"
+    },
+    {
+     "file": "homemade-printers-08.jpg",
+     "alt": "Large purple part printed on a homemade printer"
+    },
+    {
+     "file": "homemade-printers-09.jpg",
+     "alt": "Homemade printer on a busy workbench"
+    },
+    {
+     "file": "homemade-printers-10.jpg",
+     "alt": "Bare frame of a homemade printer"
+    }
+   ]
+  },
+  {
+   "id": "power-bench",
+   "group": "personal",
+   "title": "Bench power electronics",
+   "tagline": "A 200 W+ DC load and a buck-boost converter I designed myself.",
+   "type": "Personal",
+   "year": "2023",
+   "badge": "",
+   "services": "u2",
+   "summary": "A programmable DC load rated for 200 W+ with six MOSFETs and Wi-Fi control, and an ESP32 buck-boost converter with closed-loop control on the MCPWM peripheral.",
+   "facts": "DC load | 200 W+, 6 MOSFETs\nConverter | ESP32, MCPWM control\nControl | Web UI over Wi-Fi",
+   "quote_text": "",
+   "quote_who": "",
+   "photos": [
+    {
+     "file": "power-bench-01.jpg",
+     "alt": "Programmable DC load with its large heatsink"
+    },
+    {
+     "file": "power-bench-02.jpg",
+     "alt": "ESP32 buck-boost converter board on the bench"
+    },
+    {
+     "file": "power-bench-03.jpg",
+     "alt": "DC load web interface showing live voltage, current and power"
+    },
+    {
+     "file": "power-bench-04.jpg",
+     "alt": "Oscilloscope showing the converter's switching waveforms"
+    },
+    {
+     "file": "power-bench-05.jpg",
+     "alt": "DC load electronics mounted on the heatsink"
+    },
+    {
+     "file": "power-bench-06.jpg",
+     "alt": "PCB render of the buck-boost converter"
+    },
+    {
+     "file": "power-bench-07.jpg",
+     "alt": "DC load control board on a soldering mat"
+    },
+    {
+     "file": "power-bench-08.jpg",
+     "alt": "Measuring the converter's efficiency with two multimeters"
+    },
+    {
+     "file": "power-bench-09.jpg",
+     "alt": "Assembled DC load control board in hand"
+    },
+    {
+     "file": "power-bench-10.jpg",
+     "alt": "Bench setup with the oscilloscope and power supply"
+    }
+   ]
+  },
+  {
+   "id": "self-balancing",
+   "group": "personal",
+   "title": "Self-balancing robot",
+   "tagline": "Two wheels, one PID loop, tuned live from a phone.",
+   "type": "Personal",
+   "year": "2022",
+   "badge": "",
+   "services": "u2,u3",
+   "summary": "A custom PCB, Trinamic stepper drivers and a 3D-printed chassis, with an Android app for live PID tuning over Bluetooth.",
+   "facts": "Stepper drivers | Trinamic\nControl | PID, tuned live\nApp | Android, over Bluetooth",
+   "quote_text": "",
+   "quote_who": "",
+   "photos": [
+    {
+     "file": "self-balancing-01.jpg",
+     "alt": "Render of the self-balancing robot"
+    },
+    {
+     "file": "self-balancing-02.jpg",
+     "alt": "Self-balancing robot held in hand with its lights on"
+    },
+    {
+     "file": "self-balancing-03.jpg",
+     "alt": "Self-balancing robot standing on its wheels"
+    },
+    {
+     "file": "self-balancing-04.jpg",
+     "alt": "Front render of the self-balancing robot"
+    }
+   ]
+  },
+  {
+   "id": "foam-cutter",
+   "group": "personal",
+   "title": "CNC hot-wire foam cutter",
+   "tagline": "Cuts the wings for my RC planes.",
+   "type": "Personal",
+   "year": "2021",
+   "badge": "",
+   "services": "u3",
+   "summary": "A CNC hot-wire cutter I built from scratch to cut accurate airfoils out of foam for my RC planes.",
+   "facts": "Cuts | Foam airfoils\nBuilt | From scratch",
+   "quote_text": "",
+   "quote_who": "",
+   "photos": [
+    {
+     "file": "foam-cutter-01.jpg",
+     "alt": "CNC hot-wire foam cutter with a foam block"
+    },
+    {
+     "file": "foam-cutter-02.jpg",
+     "alt": "Foam wings cut on the hot-wire cutter, fitted to an RC plane"
+    },
+    {
+     "file": "foam-cutter-03.jpg",
+     "alt": "Foam scale RC plane built with hot-wire-cut wings"
+    }
+   ]
+  },
+  {
+   "id": "racing-drone",
+   "group": "personal",
+   "title": "5-inch racing drone",
+   "tagline": "Built, tuned and occasionally crashed.",
+   "type": "Personal",
+   "year": "2023",
+   "badge": "",
+   "services": "u2",
+   "summary": "A 5-inch FPV quad I built from parts and tuned myself.",
+   "facts": "Type | 5-inch FPV racing quad",
+   "quote_text": "",
+   "quote_who": "",
+   "photos": [
+    {
+     "file": "racing-drone-01.jpg",
+     "alt": "5-inch FPV racing drone with red propellers"
+    },
+    {
+     "file": "racing-drone-02.jpg",
+     "alt": "Render of the racing drone"
+    },
+    {
+     "file": "racing-drone-03.jpg",
+     "alt": "The drone during the build, on the workbench"
+    },
+    {
+     "file": "racing-drone-04.jpg",
+     "alt": "Frame, flight controller and parts before the build"
+    }
+   ]
+  }
+ ],
+ "about_photo": {
+  "file": "portrait.jpg",
+  "alt": "Portrait of Iqbal Samin Prithul"
+ }
+}
