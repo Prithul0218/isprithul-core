@@ -3,7 +3,7 @@
  * Plugin Name:       isprithul core
  * Plugin URI:        https://github.com/Prithul0218/isprithul-core
  * Description:       Projects, the editable homepage texts (Site content), the "Start a project" form and a one-time starter-content import for isprithul.me. Pairs with the isprithul theme.
- * Version:           1.1.0
+ * Version:           1.1.1
  * Requires at least: 6.5
  * Requires PHP:      8.0
  * Author:            Iqbal Samin Prithul
@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ISP_CORE_VERSION', '1.1.0' );
+define( 'ISP_CORE_VERSION', '1.1.1' );
 define( 'ISP_CORE_FILE', __FILE__ );
 define( 'ISP_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ISP_CORE_URL', plugin_dir_url( __FILE__ ) );
@@ -61,7 +61,9 @@ add_action(
 			}
 		}
 		flush_rewrite_rules( false );
+		// Saved first: the .htaccess check below loads the homepage, which runs this again.
 		update_option( 'isp_core_version', ISP_CORE_VERSION );
+		isp_htaccess_apply();
 		isp_purge_cache();
 	},
 	99
