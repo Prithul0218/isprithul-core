@@ -172,6 +172,7 @@ function isp_import_step(): array {
 					'isp_facts'          => $p['facts'],
 					'isp_quote_text'     => $p['quote_text'],
 					'isp_quote_who'      => $p['quote_who'],
+					'isp_links'          => $p['links'] ?? '',
 					'_isp_import_id'     => $p['id'],
 					'_isp_import_gallery' => '1',
 				),

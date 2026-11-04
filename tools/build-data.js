@@ -61,8 +61,22 @@ d['brief.doneTitle'] = 'Brief sent ✓';
 d['brief.doneText'] = 'Thanks! It’s in my inbox now, and I reply within one business day.';
 d['brief.errorSend'] = 'Sending didn’t work. Please email me at';
 d['brief.notify'] = '';
+/* search and sharing (no SEO plugin) */
+d['seo.title'] = 'Iqbal Samin Prithul – Hardware prototypes, start to finish';
+d['seo.description'] = 'Freelance hardware engineer in Budapest: custom electronics and PCBs, firmware, and special-purpose 3D printers and test rigs, from prototype to handoff.';
+d['seo.jobTitle'] = 'Freelance hardware engineer';
+d['seo.image'] = '0';
 fs.writeFileSync('data/defaults.json', JSON.stringify(d, null, 1) + '\n');
 
+/* links and wording added after the mockup (1.1) */
+const LINKS = {
+  'rc-glider': ['Build guide on Instructables | https://www.instructables.com/Design-and-Build-Your-Own-3D-Printed-RC-Plane/'],
+  'wattmeter': ['Build guide on Instructables | https://www.instructables.com/Designing-an-ESP32-Based-Wattmeter-a-Beginners-Gui/', 'Source on GitHub | https://github.com/Prithul0218/Precision-Wattmeter-ESP32-S3']
+};
+const glider = C.projects.find(p => p.id === 'rc-glider');
+glider.tagline = 'Grand Prize in the Make it Fly Student Design Challenge, from Autodesk on Instructables.';
+glider.summary = 'I designed it in Fusion 360 and printed the whole airframe in parts on a 3D printer I built myself. It won the Grand Prize in the Make it Fly Student Design Challenge, run by Autodesk on Instructables.';
+glider.facts = glider.facts.map(f => f[0] === 'Award' ? ['Award', 'Grand Prize, Make it Fly Student Design Challenge (Autodesk on Instructables)'] : f);
 const byProject = {};
 photos.forEach(p => { (byProject[p.project] = byProject[p.project] || []).push({ file: p.file, alt: p.alt }); });
 const starter = {
@@ -72,6 +86,7 @@ const starter = {
     services: p.services.join(','), summary: p.summary,
     facts: (p.facts || []).map(f => f.join(' | ')).join('\n'),
     quote_text: p.quote ? p.quote.text : '', quote_who: p.quote ? p.quote.who : '',
+    links: (LINKS[p.id] || []).join('\n'),
     photos: byProject[p.id] || []
   })),
   about_photo: (byProject.about || [])[0] || null

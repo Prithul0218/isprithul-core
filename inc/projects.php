@@ -25,6 +25,7 @@ function isp_project_meta(): array {
 		'isp_facts'      => 'isp_clean_multiline',
 		'isp_quote_text' => 'isp_clean_multiline',
 		'isp_quote_who'  => 'isp_clean_line',
+		'isp_links'      => 'isp_clean_multiline',
 		'isp_gallery'    => 'isp_sanitize_gallery',
 	);
 }
@@ -90,6 +91,16 @@ function isp_projects(): array {
 			$facts[] = array( isp_smart( $parts[0] ), isp_smart( $parts[1] ?? '' ) );
 		}
 		$quote = $m( 'isp_quote_text' );
+		$links = array();
+		foreach ( isp_parse_lines( $m( 'isp_links' ), array( 'label' => '', 'href' => '' ) ) as $row ) {
+			$href = esc_url_raw( $row['href'], array( 'http', 'https' ) );
+			if ( '' !== $href ) {
+				$links[] = array(
+					'label' => '' !== $row['label'] ? $row['label'] : (string) wp_parse_url( $href, PHP_URL_HOST ),
+					'href'  => $href,
+				);
+			}
+		}
 		$out[] = array(
 			'id'       => $post->post_name ? $post->post_name : 'project-' . $post->ID,
 			'group'    => isp_sanitize_group( $m( 'isp_group' ) ),
@@ -102,6 +113,7 @@ function isp_projects(): array {
 			'photos'   => array_values( array_filter( array_map( 'isp_photo', isp_parse_ids( $m( 'isp_gallery' ) ) ) ) ),
 			'summary'  => isp_smart( $m( 'isp_summary' ) ),
 			'facts'    => $facts,
+			'links'    => $links,
 			'quote'    => '' === $quote ? null : array(
 				'text' => isp_smart( $quote ),
 				'who'  => isp_smart( $m( 'isp_quote_who' ) ),
@@ -266,6 +278,7 @@ function isp_project_box( WP_Post $post ): void {
 	$area( 'isp_facts', 'Facts', 5, 'One per line: Label | Value, e.g. Client | Private, UAE' );
 	$area( 'isp_quote_text', 'Quote (optional)', 3 );
 	$text( 'isp_quote_who', 'Quote by', 'e.g. Assaf Pashut, Founder, Chefee Robotics' );
+	$area( 'isp_links', 'Links (optional)', 3, 'One per line: Label | Address, e.g. Build guide on Instructables | https://www.instructables.com/… They show in the photo viewer.' );
 
 	printf(
 		'<p class="isp-field"><label for="isp_slug">Project ID</label><input type="text" class="widefat code" id="isp_slug" name="post_name" value="%s"><span class="description">Used in links such as <code>#p-%s</code> and in the “Is Prithul ___?” questions. Lowercase letters, numbers and dashes.</span></p>',

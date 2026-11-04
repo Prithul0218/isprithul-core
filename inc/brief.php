@@ -64,6 +64,28 @@ add_action(
 				'callback'            => 'isp_receive_brief',
 			)
 		);
+		// The latest briefs and whether their email went out (administrators only), for checks.
+		register_rest_route(
+			'isprithul/v1',
+			'/briefs',
+			array(
+				'methods'             => 'GET',
+				'permission_callback' => fn() => current_user_can( 'manage_options' ),
+				'callback'            => function () {
+					$out = array();
+					foreach ( get_posts( array( 'post_type' => ISP_BRIEF, 'post_status' => 'private', 'numberposts' => 10 ) ) as $brief ) {
+						$out[] = array(
+							'id'       => $brief->ID,
+							'received' => get_post_time( 'c', true, $brief ),
+							'title'    => $brief->post_title,
+							'email'    => (string) get_post_meta( $brief->ID, 'isp_email', true ),
+							'mailed'   => '1' === get_post_meta( $brief->ID, 'isp_mailed', true ),
+						);
+					}
+					return rest_ensure_response( $out );
+				},
+			)
+		);
 	}
 );
 

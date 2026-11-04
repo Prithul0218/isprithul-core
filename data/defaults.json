@@ -92,5 +92,9 @@
  "brief.doneText": "Thanks! It’s in my inbox now, and I reply within one business day.",
  "brief.close": "Close",
  "brief.errorSend": "Sending didn’t work. Please email me at",
- "brief.notify": ""
+ "brief.notify": "",
+ "seo.title": "Iqbal Samin Prithul – Hardware prototypes, start to finish",
+ "seo.description": "Freelance hardware engineer in Budapest: custom electronics and PCBs, firmware, and special-purpose 3D printers and test rigs, from prototype to handoff.",
+ "seo.jobTitle": "Freelance hardware engineer",
+ "seo.image": "0"
 }

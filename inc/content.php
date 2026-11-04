@@ -34,6 +34,20 @@ function isp_defaults(): array {
 function isp_schema(): array {
 	$t = fn( $label, $extra = array() ) => array_merge( array( 'type' => 'text', 'label' => $label ), $extra );
 	return array(
+		'seo'         => array(
+			'title'  => 'Search and sharing',
+			'intro'  => 'What Google and link previews (LinkedIn, WhatsApp, X) show. Other pages use their own title; give a page or post an Excerpt to set its description.',
+			'fields' => array(
+				'seo.title'       => $t( 'Homepage title', array( 'help' => 'The browser tab and the blue link in Google. About 50–60 characters.' ) ),
+				'seo.description' => $t( 'Homepage description', array( 'type' => 'textarea', 'rows' => 3, 'help' => 'The grey text under the link in Google. About 150 characters.' ) ),
+				'seo.jobTitle'    => $t( 'Your job title', array( 'help' => 'For search engines (structured data).' ) ),
+				'seo.image'       => array(
+					'type'  => 'image',
+					'label' => 'Share picture',
+					'help'  => 'Shown when someone shares a link to the site. 1200 × 630 px works best. Leave empty for the built-in one.',
+				),
+			),
+		),
 		'basics'      => array(
 			'title'  => 'Basics',
 			'fields' => array(
@@ -555,6 +569,10 @@ function isp_photo( int $id ): ?array {
 function isp_content_for_script( bool $home ): array {
 	$c = isp_content();
 	unset( $c['brief']['notify'] );
+	// The address goes out reversed and base64-encoded; core.js turns it back. Simple
+	// scrapers that read the page source don't find it.
+	$c['site']['emailEnc'] = isp_email_encode( (string) $c['site']['email'] );
+	$c['site']['email']    = '';
 	if ( ! $home ) {
 		return array(
 			'site'     => $c['site'],
@@ -573,6 +591,35 @@ function isp_content_for_script( bool $home ): array {
 	unset( $c['clients'], $c['experience'], $c['about'], $c['footer'] );
 	return $c;
 }
+
+/* ---------- the contact email, kept away from address harvesters ---------- */
+
+function isp_email_encode( string $email ): string {
+	return base64_encode( strrev( $email ) ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- the point is light obfuscation.
+}
+
+/** "hello [at] gmail.com": what people without JavaScript (and scrapers) see. */
+function isp_email_masked( string $email ): string {
+	return str_replace( '@', ' [at] ', $email );
+}
+
+/**
+ * The contact email as a link the theme's script completes in the browser.
+ * [isp_email] in any page or post (the Legal page, for example) shows it too.
+ */
+function isp_email_html( string $class = 'link' ): string {
+	$email = (string) isp_get( 'site.email', '' );
+	if ( '' === $email ) {
+		return '';
+	}
+	return sprintf(
+		'<a class="%s" data-email data-email-enc="%s">%s</a>',
+		esc_attr( $class ),
+		esc_attr( isp_email_encode( $email ) ),
+		esc_html( isp_email_masked( $email ) )
+	);
+}
+add_shortcode( 'isp_email', fn() => isp_email_html() );
 
 /* ---------- REST: read and change the texts (administrators only) ---------- */
 

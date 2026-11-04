@@ -14,6 +14,7 @@
    "facts": "Client | Private, UAE\nProcess | Binder jetting into sand\nBase | Voron 2.4 CoreXY\nControl | Klipper + my own host software",
    "quote_text": "",
    "quote_who": "",
+   "links": "",
    "photos": [
     {
      "file": "binder-jet-01.jpg",
@@ -54,6 +55,7 @@
    "facts": "Client | Chefee Robotics, US\nPCBs | 3+ custom boards\nFirmware | Mainboard and actuators\nPrinted parts | 20+\nShown at | GITEX Global 2024",
    "quote_text": "Prithul spent countless hours solving puzzle after puzzle, problem after problem, designing out-of-the-box 3D models … and all while communicating progress at a very high level.",
    "quote_who": "Assaf Pashut, Founder, Chefee Robotics",
+   "links": "",
    "photos": [
     {
      "file": "chefee-01.jpg",
@@ -82,6 +84,7 @@
    "facts": "Orders | 247\nRating | 5.0★ from 142 reviews\nPrinters | 80+ models\nClients | US, UK, Europe and more",
    "quote_text": "",
    "quote_who": "",
+   "links": "",
    "photos": [
     {
      "file": "firmware-01.jpg",
@@ -114,6 +117,7 @@
    "facts": "Role | Co-founder, R&D lead\nCompany | Drishti Technologies, Dhaka\nPCB | Custom, designed in Eagle\nEnclosure | Fusion 360, 3D printed\nPatent | Applied for\nUsers today | 700+ (production version)",
    "quote_text": "",
    "quote_who": "",
+   "links": "",
    "photos": [
     {
      "file": "abhash-01.jpg",
@@ -154,6 +158,7 @@
    "facts": "Client | Khulna University\nKit | Siboor Voron 2.4 R2\nFirmware | Klipper, tuned for speed",
    "quote_text": "",
    "quote_who": "",
+   "links": "",
    "photos": [
     {
      "file": "voron-khulna-01.jpg",
@@ -210,6 +215,7 @@
    "facts": "WRO 2022 | 3rd, international final\nWRO 2025 | 6th of 65 teams\nStack | ESP32, computer vision",
    "quote_text": "",
    "quote_who": "",
+   "links": "",
    "photos": [
     {
      "file": "wro-01.jpg",
@@ -249,15 +255,16 @@
    "id": "rc-glider",
    "group": "personal",
    "title": "3D-printed RC glider",
-   "tagline": "Designed in Fusion 360, printed on my own printer, and it flies.",
+   "tagline": "Grand Prize in the Make it Fly Student Design Challenge, from Autodesk on Instructables.",
    "type": "Personal",
    "year": "2023",
    "badge": "Grand Prize",
    "services": "u3",
-   "summary": "I designed it in Fusion 360 and printed the whole airframe in parts on a 3D printer I built myself. It won the Grand Prize in the Instructables Make it Fly student design challenge.",
-   "facts": "CAD | Fusion 360\nAirframe | 3D printed in parts\nAward | Grand Prize, Make it Fly (Instructables)\nFeatured by | Autodesk Fusion, Feb 2024",
+   "summary": "I designed it in Fusion 360 and printed the whole airframe in parts on a 3D printer I built myself. It won the Grand Prize in the Make it Fly Student Design Challenge, run by Autodesk on Instructables.",
+   "facts": "CAD | Fusion 360\nAirframe | 3D printed in parts\nAward | Grand Prize, Make it Fly Student Design Challenge (Autodesk on Instructables)\nFeatured by | Autodesk Fusion, Feb 2024",
    "quote_text": "",
    "quote_who": "",
+   "links": "Build guide on Instructables | https://www.instructables.com/Design-and-Build-Your-Own-3D-Printed-RC-Plane/",
    "photos": [
     {
      "file": "rc-glider-01.jpg",
@@ -290,6 +297,7 @@
    "facts": "ADC | 24-bit ADS1256\nMCU | ESP32-S3\nShunts | 5 mΩ + 100 mΩ\nDocs | GitHub, Instructables",
    "quote_text": "",
    "quote_who": "",
+   "links": "Build guide on Instructables | https://www.instructables.com/Designing-an-ESP32-Based-Wattmeter-a-Beginners-Gui/\nSource on GitHub | https://github.com/Prithul0218/Precision-Wattmeter-ESP32-S3",
    "photos": [
     {
      "file": "wattmeter-01.jpg",
@@ -322,6 +330,7 @@
    "facts": "First build | 2020\nBuilt | From scratch",
    "quote_text": "",
    "quote_who": "",
+   "links": "",
    "photos": [
     {
      "file": "homemade-printers-01.jpg",
@@ -378,6 +387,7 @@
    "facts": "DC load | 200 W+, 6 MOSFETs\nConverter | ESP32, MCPWM control\nControl | Web UI over Wi-Fi",
    "quote_text": "",
    "quote_who": "",
+   "links": "",
    "photos": [
     {
      "file": "power-bench-01.jpg",
@@ -434,6 +444,7 @@
    "facts": "Stepper drivers | Trinamic\nControl | PID, tuned live\nApp | Android, over Bluetooth",
    "quote_text": "",
    "quote_who": "",
+   "links": "",
    "photos": [
     {
      "file": "self-balancing-01.jpg",
@@ -466,6 +477,7 @@
    "facts": "Cuts | Foam airfoils\nBuilt | From scratch",
    "quote_text": "",
    "quote_who": "",
+   "links": "",
    "photos": [
     {
      "file": "foam-cutter-01.jpg",
@@ -494,6 +506,7 @@
    "facts": "Type | 5-inch FPV racing quad",
    "quote_text": "",
    "quote_who": "",
+   "links": "",
    "photos": [
     {
      "file": "racing-drone-01.jpg",
